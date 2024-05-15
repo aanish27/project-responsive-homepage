@@ -1,3 +1,552 @@
-h1{
-    color: aqua;
+/* overiding defaults */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+
 }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    /* overflow-wrap: break-word; */
+
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    /* margin-left: 50px;
+    margin-right: 50px; 1*/
+}
+
+#about{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#about > * {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.img-box{
+    position: relative;
+}
+
+
+
+.img-box > img{
+
+  max-width:600px;
+  max-height:600px;
+  height: auto;
+  width: 35vw;
+
+}
+
+.img-box > h1 {
+    position: absolute;     /*margin and padding wont wrk with abolute position */
+    bottom: 8px; /*bottom 8px from the parent */
+    color: aliceblue;
+    font-size: 3rem;
+    left: 29%;
+    overflow-wrap: normal;
+
+
+}
+
+.text {
+    font-size: 1rem;
+    padding: 20px;
+    /* width: 50vw; */
+    width: 800px;
+    min-width: 50vw;
+    /* height: 40vh; */
+    /* height: 320px; 1 */
+    background-color: whitesmoke;
+}
+
+
+
+.text > h2 {
+    font-size: 3rem;
+
+}
+
+.icons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5vw;
+
+}
+
+i {
+    font-size: 2rem;
+    padding: 10px;
+    padding-right: 0;
+}
+
+
+
+
+ #my-works > h2{
+  font-size: 2rem ;
+ }
+
+ .cards{
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px,1fr)); /*300px > 1fr*/
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+
+ }
+
+
+ .card {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr;
+  grid-template-rows: 300px  50px 100px ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+.card > .img {
+  background-color: #012c2c;
+  /* background-image: url(assets/mp1.jpg);
+  background-size: 100% 100%;
+  background-size: cover; */
+  grid-column: 1/4;
+  grid-row: 1/2;
+
+}
+
+.card > h3 {
+  font-size: 1.5rem;
+  grid-column: 1/2;
+
+}
+
+
+
+.card > g {
+  grid-column: 2/3;
+
+}
+
+.card > p{
+  grid-column: 1/4;
+}
+
+
+
+
+
+.card > p , h3 {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+
+#contact{
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+#contact > img {
+  max-width:600px;
+  max-height:600px;
+  height: auto;
+  width: 30vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#contact > .text > h2 {
+  display: inline;
+  margin-left: 0;
+}
+
+
+#contact > .text {
+  width: 35vw;
+  /* display:grid ;
+  grid-template-columns: 40px 1fr 40px 40px; */
+
+}
+
+
+#contact > .text > * {
+  padding: 10px;
+
+}
+
+
+.icon-pack {
+  display: flex;
+  align-items: center;
+}
+
+.icon-pack > i {
+  padding: 0;
+}
+
+.icon-pack > span{
+  margin-left: 10px;
+}
+
+
+
+/* #contact > .text > h2 {
+  grid-column: 1/5;
+}
+
+#contact > .text > p {
+  grid-column: 1/5;
+}
+
+#contact > .text > i {
+  grid-column: 1/2;
+}
+#contact > .text > span {
+  grid-column: 2/5;
+}
+
+#contact > .text > .twitter {
+  grid-column: 3/4;
+}
+
+
+
+
+
+
+
+#contact > .text  > * {
+  /* padding: 10px; */
+/* }
+
+#contact > .text  > * {
+
+} */
+
+
+
+
+/* footer {
+  height: 25vh;
+
+  background-color: black;
+} */
+
+
+
+
+
+@media (max-width: 1023px) {
+
+  body{
+    background-color: rgba(255, 0, 0, 0.743);
+    margin: 10vw;
+
+  }
+
+  #about{
+    display: block;
+    height: auto;
+    margin-bottom: 10vw;
+
+}
+
+.img-box{
+  position: absolute;
+  top: 5vw;
+  left: 10vw;
+  overflow: visible;
+  white-space: nowrap;
+
+
+
+}
+
+.img-box > img{
+  height: auto;
+  width: 50vw;
+
+}
+
+
+.text {
+  font-size: 1rem;
+  /* width: 50vw; */
+  width: 100%;
+  min-width: 0;
+  /* height: 40vh; */
+  height: 50vw;
+  background-color: whitesmoke;
+  overflow: scroll;
+}
+
+.text > p,
+.text > h2 {
+  padding-left: 50vw;
+}
+
+.img-box > h1 {
+  position: absolute;     /*margin and padding wont wrk with abolute position */
+  color: rgb(17, 34, 49);
+  font-size: 5vw;
+  top: 10px;
+  left: 55vw;
+
+
+}
+
+.text > h2 {
+  padding-top: 2%;
+  font-size: calc(16px + 1.5vw);
+
+}
+
+.icons > *{
+  display: none;
+}
+
+.cards{
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); /*300px > 1fr*/
+  gap: 30px;
+}
+
+
+
+#my-works{
+  margin-bottom: 20px;
+}
+
+
+#contact {
+  background-color: whitesmoke;
+  height: auto;
+  margin-top: 0;
+
+}
+
+
+#contact > img {
+
+  height: auto;
+  max-height:500px;
+
+
+  width: 50%;
+  padding: 20px;
+
+}
+
+#contact > .text > h2 {
+  display: inline;
+  margin-right: 0;
+
+}
+#contact > .text {
+  width: auto;
+  /* display:grid ;
+  grid-template-columns: 40px 1fr 40px 40px; */
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+
+
+
+}
+
+
+/* phone */
+
+@media (max-width: 601px) {
+
+
+  body {
+    background-color: white;
+    margin-top: 5vw;
+    margin-bottom: 0;
+    
+  }
+
+  #about{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+
+
+
+  }
+
+  #about > * {
+    box-shadow: none;
+
+  }
+  .img-box  {
+    position: relative;
+    margin-right: 20vw;
+
+  }
+
+
+  .img-box > img{
+    height: auto;
+    width: calc(100vw - 20vw);
+
+  }
+
+  .img-box > h1 {
+    position: absolute;
+    font-size: calc(2em + 1vw);
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: aliceblue;
+  }
+
+
+  .text {
+
+    background-color: white;
+    height: fit-content;
+
+  }
+
+  .text > p , .text > h2  {
+    padding-left: 0;
+  }
+
+
+
+  .text > h2 {
+    align-self: center;
+    font-size: 2rem;
+
+  }
+
+  .icons > i {
+    display: inline;
+  }
+  .icons{
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      padding: 20px;
+  }
+
+  i {
+      font-size: 2rem;
+      padding: 10px;
+      padding-right: 0;
+  }
+
+
+
+#my-works > h2{
+
+    font-size: 2rem;
+    display: grid;
+    justify-content: center;
+   }
+
+
+#contact{
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+  height: auto;
+
+}
+#contact > .text > h2 {
+  margin-right: 0;
+}
+
+#contact > .text  {
+  text-align: center;
+  width: auto;
+  margin-bottom: 0;
+
+}
+.icon-pack {
+  flex-direction: column;
+}
+
+
+
+#contact > .text > h2 {
+  display: block;
+}
+
+
+#contact > img {
+  height: auto;
+  width: 100vw;
+  padding: 0;
+
+}
+
+
+}
+
+
+
+
