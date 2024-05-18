@@ -140,7 +140,6 @@ i {
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px,1fr)); /*300px > 1fr*/
-  grid-template-rows: 1fr 1fr;
   gap: 20px;
 
  }
@@ -423,7 +422,7 @@ i {
     background-color: white;
     margin-top: 5vw;
     margin-bottom: 0;
-    
+
   }
 
   #about{
